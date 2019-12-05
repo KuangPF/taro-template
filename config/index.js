@@ -1,3 +1,6 @@
+/* eslint-disable */
+const path = require('path')
+
 const config = {
   projectName: 'taro-template',
   date: '2019-11-29',
@@ -13,24 +16,20 @@ const config = {
     babel: {
       sourceMap: true,
       presets: [
-        ['env', {
-          modules: false
-        }]
+        [
+          'env',
+          {
+            modules: false
+          }
+        ]
       ],
-      plugins: [
-        'transform-decorators-legacy',
-        'transform-class-properties',
-        'transform-object-rest-spread'
-      ]
+      plugins: ['transform-decorators-legacy', 'transform-class-properties', 'transform-object-rest-spread']
     }
   },
-  defineConstants: {
-  },
+  defineConstants: {},
   copy: {
-    patterns: [
-    ],
-    options: {
-    }
+    patterns: [],
+    options: {}
   },
   weapp: {
     module: {
@@ -38,18 +37,12 @@ const config = {
         autoprefixer: {
           enable: true,
           config: {
-            browsers: [
-              'last 3 versions',
-              'Android >= 4.1',
-              'ios >= 8'
-            ]
+            browsers: ['last 3 versions', 'Android >= 4.1', 'ios >= 8']
           }
         },
         pxtransform: {
           enable: true,
-          config: {
-
-          }
+          config: {}
         },
         url: {
           enable: true,
@@ -75,11 +68,7 @@ const config = {
         autoprefixer: {
           enable: true,
           config: {
-            browsers: [
-              'last 3 versions',
-              'Android >= 4.1',
-              'ios >= 8'
-            ]
+            browsers: ['last 3 versions', 'Android >= 4.1', 'ios >= 8']
           }
         },
         cssModules: {
@@ -91,10 +80,13 @@ const config = {
         }
       }
     }
+  },
+  alias: {
+    '@': path.resolve(__dirname, '..', 'src/')
   }
 }
 
-module.exports = function (merge) {
+module.exports = function(merge) {
   if (process.env.NODE_ENV === 'development') {
     return merge({}, config, require('./dev'))
   }
