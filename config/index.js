@@ -1,6 +1,22 @@
 /* eslint-disable */
 const path = require('path')
 
+// NOTE 在 sass 中通过别名（@ 或 ~）引用需要指定路径
+const sassImporter = url => {
+  if (url[0] === '~' && url[1] !== '/') {
+    return {
+      file: path.resolve(__dirname, '..', 'node_modules', url.substr(1))
+    }
+  }
+
+  const reg = /^@style\/(.*)/
+  return {
+    file: reg.test(url)
+      ? path.resolve(__dirname, '..', 'src/style', url.match(reg)[1])
+      : url
+  }
+}
+
 const config = {
   projectName: 'taro-template',
   date: '2019-11-29',
@@ -24,6 +40,9 @@ const config = {
         ]
       ],
       plugins: ['transform-decorators-legacy', 'transform-class-properties', 'transform-object-rest-spread']
+    },
+    sass: {
+      importer: sassImporter
     }
   },
   defineConstants: {},
