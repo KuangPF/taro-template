@@ -1,5 +1,7 @@
 import Taro from '@tarojs/taro'
 import { View, Text } from '@tarojs/components'
+import { routers } from '@/routes/index'
+
 import './trending-item.scss'
 
 export interface ITrending {
@@ -9,6 +11,7 @@ export interface ITrending {
   stars: string
   languageColor: string
   description: string
+  url: string
 }
 
 interface IProps {
@@ -17,14 +20,25 @@ interface IProps {
 }
 
 class TrendingItem extends Taro.PureComponent<IProps> {
+  handleViewDetail = (data: ITrending) => {
+    Taro.navigateTo({
+      url: `${routers.webview}?webviewSrc=${data.url}`
+    })
+  }
+
   render() {
     const { data, index } = this.props
-    if(!data) {
+    if (!data) {
       return null
     }
     return (
       <View className="info">
-        <View className="rank">
+        <View
+          className="rank"
+          onClick={() => {
+            this.handleViewDetail(data)
+          }}
+        >
           <Text className="bold">{index}.</Text>
           <Text className="title">{data.name}</Text>
         </View>
