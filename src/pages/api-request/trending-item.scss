@@ -1,0 +1,44 @@
+@import '~taro-ui/dist/style/components/icon.scss';
+@import '@style/index.scss';
+
+.info {
+  padding: 10px;
+  @include one-px-border(#d8d8d8);
+  .rank {
+    font-size: 40px;
+    .title {
+      margin-left: 10px;
+      color: #0366d6;
+    }
+  }
+  .sub-title {
+    font-size: 30px;
+    color: #545454;
+    .language {
+      display: inline-block;
+      .language-icon {
+        display: inline-block;
+        vertical-align: middle;
+        height: 20px;
+        width: 20px;
+        margin-right: 5px;
+        border-radius: 50%;
+      }
+    }
+    .star {
+      display: inline-block;
+      margin-left: 20px;
+      .star-icon {
+        margin-right: 5px;
+      }
+    }
+    .text {
+      vertical-align: middle;
+    }
+  }
+  .details {
+    font-size: 24px;
+    color: #b9b9b9;
+    @include no-wrap-multi(2);
+  }
+}
