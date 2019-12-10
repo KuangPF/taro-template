@@ -24,12 +24,12 @@ class App extends Component {
    */
   config: Config = {
     pages: [
-      'pages/vant-weapp/index',
-      'pages/data-dva/index',
-      'pages/api-request/index',
       'pages/index/index',
       'pages/base-component/index',
-      'pages/webview/index'
+      'pages/api-request/index',
+      'pages/webview/index',
+      'pages/data-dva/index',
+      'pages/vant-weapp/index',
     ],
     window: {
       backgroundTextStyle: 'light',
