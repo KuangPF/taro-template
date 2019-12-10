@@ -41,6 +41,23 @@ class BaseComponent extends PureComponent<IProps, IStates> {
     })
     console.log(e)
   }
+
+  handleShowActionSheet = () => {
+    const itemList = ['A', 'B', 'C']
+    Taro.showActionSheet({
+      itemList,
+      success(res) {
+        const itemCheck = itemList[res.tapIndex]
+        Taro.showToast({
+          title: `已选中: ${itemCheck}`,
+          icon: 'none'
+        })
+      },
+      fail(res) {
+        console.log(res.errMsg)
+      }
+    })
+  }
   render() {
     const { timeValue, userInfo } = this.state
     return (
@@ -54,6 +71,9 @@ class BaseComponent extends PureComponent<IProps, IStates> {
         <Picker className="mt15" mode="date" value={timeValue} onChange={this.handleDateChange}>
           <Button>时间选择器</Button>
         </Picker>
+        <Button className="mt15" onClick={this.handleShowActionSheet}>
+          showActionSheet
+        </Button>
         {userInfo.avatarUrl && (
           <View className="mt15">
             <View>nickName: {userInfo.nickName}</View>

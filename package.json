@@ -31,6 +31,7 @@
     "@tarojs/taro-swan": "1.2.22",
     "@tarojs/taro-tt": "1.2.22",
     "@tarojs/taro-weapp": "1.2.22",
+    "dva-core": "^2.0.1",
     "nerv-devtools": "^1.3.9",
     "nervjs": "^1.3.9",
     "redux": "^4.0.0",
@@ -39,7 +40,7 @@
     "taro-ui": "^2.2.4"
   },
   "devDependencies": {
-    "@tarojs/plugin-babel": "1.2.22",
+    "@tarojs/plugin-babel": "^1.3.27",
     "@tarojs/plugin-csso": "1.2.22",
     "@tarojs/plugin-less": "1.2.22",
     "@tarojs/plugin-sass": "^1.3.27",

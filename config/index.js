@@ -47,7 +47,12 @@ const config = {
   },
   defineConstants: {},
   copy: {
-    patterns: [],
+    patterns: [
+      {
+        from: 'src/components/vant-weapp/dist/wxs/',
+        to: 'dist/components/vant-weapp/dist/wxs'
+      }
+    ],
     options: {}
   },
   weapp: {
@@ -60,6 +65,7 @@ const config = {
           }
         },
         pxtransform: {
+          selectorBlackList: [/^.van-.*?$/],
           enable: true,
           config: {}
         },

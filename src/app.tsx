@@ -4,8 +4,6 @@ import { Provider } from '@tarojs/redux'
 
 import Index from './pages/index'
 
-import configStore from './store'
-
 import './app.scss'
 
 // 如果需要在 h5 环境中开启 React Devtools
@@ -14,7 +12,7 @@ import './app.scss'
 //   require('nerv-devtools')
 // }
 
-const store = configStore()
+import store from '@/store'
 
 class App extends Component {
   /**
@@ -25,7 +23,14 @@ class App extends Component {
    * 提示和声明 navigationBarTextStyle: 'black' | 'white' 类型冲突, 需要显示声明类型
    */
   config: Config = {
-    pages: ['pages/api-request/index', 'pages/index/index', 'pages/base-component/index', 'pages/webview/index'],
+    pages: [
+      'pages/vant-weapp/index',
+      'pages/data-dva/index',
+      'pages/api-request/index',
+      'pages/index/index',
+      'pages/base-component/index',
+      'pages/webview/index'
+    ],
     window: {
       backgroundTextStyle: 'light',
       navigationBarBackgroundColor: '#fff',
@@ -33,14 +38,6 @@ class App extends Component {
       navigationBarTextStyle: 'black'
     }
   }
-
-  componentDidMount() {}
-
-  componentDidShow() {}
-
-  componentDidHide() {}
-
-  componentDidCatchError() {}
 
   // 在 App 类中的 render() 函数没有实际作用
   // 请勿修改此函数

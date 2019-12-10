@@ -1,28 +1,21 @@
-import { createStore, applyMiddleware, compose } from 'redux'
-import thunkMiddleware from 'redux-thunk'
-import rootReducer from '../reducers'
+import Taro from '@tarojs/taro'
+import { create } from 'dva-core'
+import models from '../models'
+declare var global: any
+const opt = {
+  models,
+  initialState: {}
+}
+const app = create(opt)
 
-const composeEnhancers =
-  typeof window === 'object' &&
-  window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ?   
-    window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
-      // Specify extension’s options like name, actionsBlacklist, actionsCreators, serialize...
-    }) : compose
-
-const middlewares = [
-  thunkMiddleware
-]
-
-if (process.env.NODE_ENV === 'development') {
-  middlewares.push(require('redux-logger').createLogger())
+// 适配支付宝小程序
+if (Taro.getEnv() === Taro.ENV_TYPE.ALIPAY) {
+  global = {}
 }
 
-const enhancer = composeEnhancers(
-  applyMiddleware(...middlewares),
-  // other store enhancers if any
-)
+if (!global.registered) opt.models.forEach(model => app.model(model))
+global.registered = true
+app.start()
 
-export default function configStore () {
-  const store = createStore(rootReducer, enhancer)
-  return store
-}
+const store = app._store
+export default store

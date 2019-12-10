@@ -1,0 +1,28 @@
+.van-clearfix:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.demo-block__title {
+  margin: 0;
+  font-weight: 400;
+  font-size: 28px;
+  color: rgba(69, 90, 100, 0.6);
+  padding: 40px 30px 30px;
+}
+
+.demo-block--padding {
+  padding: 0 30px;
+}
+
+.demo-block--padding .demo-block__title {
+  padding-left: 0;
+}
+.demo-margin-right {
+  margin-right: 20px;
+}
+
+.row {
+  margin-top: 15px
+}
