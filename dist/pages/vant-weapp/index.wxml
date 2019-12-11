@@ -1,0 +1,20 @@
+<block>
+    <view class="custom-class demo-block van-clearfix demo-block--padding">
+        <view class="demo-block__title">按钮</view>
+        <view>
+            <van-button class="demo-margin-right" __triggerObserer="{{ _triggerObserer }}">默认按钮</van-button>
+            <van-button type="primary" __triggerObserer="{{ _triggerObserer }}" class="demo-margin-right">主要按钮</van-button>
+            <van-button type="info" __triggerObserer="{{ _triggerObserer }}" class="demo-margin-right">信息按钮</van-button>
+        </view>
+        <view class="row">
+            <van-button type="danger" __triggerObserer="{{ _triggerObserer }}" class="demo-margin-right">危险按钮</van-button>
+            <van-button type="warning" __triggerObserer="{{ _triggerObserer }}">警告按钮</van-button>
+        </view>
+        <view class="demo-block__title">搜索</view>
+        <van-search placeholder="请输入搜索关键词" __triggerObserer="{{ _triggerObserer }}"></van-search>
+        <view class="demo-block__title">图标</view>
+        <van-icon name="close" __triggerObserer="{{ _triggerObserer }}"></van-icon>
+        <van-icon name="star" __triggerObserer="{{ _triggerObserer }}"></van-icon>
+        <van-icon name="star-o" __triggerObserer="{{ _triggerObserer }}"></van-icon>
+    </view>
+</block>

@@ -1,0 +1,18 @@
+<block>
+    <block wx:if="{{!data}}">
+        <view></view>
+    </block>
+    <view class="info" wx:else>
+        <view class="rank" bindtap="anonymousFunc0"><text class="bold">{{index}}.</text><text class="title">{{data.name}}</text>
+        </view>
+        <view class="sub-title followers">
+            <view class="language">
+                <view class="language-icon" style="{{anonymousState__temp}}"></view><text class="text">{{data.language}}</text>
+            </view>
+            <view class="star">
+                <view class="star-icon at-icon at-icon-star-2"></view><text class="text">{{data.stars}}</text>
+            </view>
+        </view>
+        <view class="details">{{data.description}}</view>
+    </view>
+</block>

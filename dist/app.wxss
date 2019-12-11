@@ -1,0 +1,12 @@
+
+.page-content {
+  padding: 20rpx; }
+
+.mt15 {
+  margin-top: 15rpx; }
+
+.ml15 {
+  margin-left: 15rpx; }
+
+.bold {
+  font-weight: bold; }

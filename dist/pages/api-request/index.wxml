@@ -1,0 +1,9 @@
+<block>
+    <view class="page-content">
+        <button bindtap="handleGetGithubTrending" disabled="{{apiLoading}}" loading="{{apiLoading}}">获取 Github Trending</button>
+        <view class="trending-wrap"></view>
+        <block wx:if="{{trendingList.length > 0}}">
+            <trending-item wx:key="$loopState__temp2" __triggerObserer="{{ _triggerObserer }}" data="{{item.$original}}" index="{{item.$loopState__temp4}}" wx:for="{{loopArray0}}" wx:for-item="item" wx:for-index="index"></trending-item>
+        </block>
+    </view>
+</block>

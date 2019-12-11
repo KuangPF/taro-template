@@ -1,0 +1,8 @@
+<block>
+    <view class="index-wrap">
+        <button bindtap="anonymousFunc0" class="mt15">基础组件</button>
+        <button bindtap="anonymousFunc1" class="mt15">数据请求</button>
+        <button bindtap="anonymousFunc2" class="mt15">dva 数据流</button>
+        <button bindtap="anonymousFunc3" class="mt15">vant-weapp 第三方 UI 组件</button>
+    </view>
+</block>

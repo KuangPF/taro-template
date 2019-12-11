@@ -1,0 +1,16 @@
+<block>
+    <view class="page-content">
+        <button class="mt15" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="handleGetUserInfo">获取用户信息</button>
+        <button type="primary" class="mt15" loading="{{true}}">Loading...</button>
+        <picker class="mt15" mode="date" value="{{timeValue}}" bindchange="handleDateChange">
+            <button>时间选择器</button>
+        </picker>
+        <button class="mt15" bindtap="handleShowActionSheet">showActionSheet</button>
+        <block wx:if="{{userInfo.avatarUrl}}">
+            <view class="mt15">
+                <view>nickName: {{userInfo.nickName}}</view>
+                <image style="{{anonymousState__temp}}" src="{{userInfo.avatarUrl}}"></image>
+            </view>
+        </block>
+    </view>
+</block>
