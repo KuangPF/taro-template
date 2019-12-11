@@ -338,11 +338,6 @@
   resolved "https://registry.npm.taobao.org/@types/webpack-env/download/@types/webpack-env-1.14.1.tgz#0d8a53f308f017c53a5ddc3d07f4d6fa76b790d7"
   integrity sha1-DYpT8wjwF8U6Xdw9B/TW+na3kNc=
 
-"@vant/weapp@^1.0.0-beta.4":
-  version "1.0.0-beta.4"
-  resolved "https://registry.npm.taobao.org/@vant/weapp/download/@vant/weapp-1.0.0-beta.4.tgz#b92c09ee4999ecbbbd03cb41fb5b618cfafc7744"
-  integrity sha1-uSwJ7kmZ7Lu9A8tB+1thjPr8d0Q=
-
 "@webassemblyjs/ast@1.7.11":
   version "1.7.11"
   resolved "https://registry.npm.taobao.org/@webassemblyjs/ast/download/@webassemblyjs/ast-1.7.11.tgz#b988582cafbb2b095e8b556526f30c90d057cace"
