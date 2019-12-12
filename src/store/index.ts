@@ -1,6 +1,7 @@
 import Taro from '@tarojs/taro'
 import { create } from 'dva-core'
 import models from '../models'
+
 declare var global: any
 const opt = {
   models,
