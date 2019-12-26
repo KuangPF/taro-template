@@ -1,4 +1,4 @@
-<block>
+<block wx:if="{{$taroCompReady}}">
     <block wx:if="{{!data}}">
         <view></view>
     </block>

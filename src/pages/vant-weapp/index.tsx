@@ -4,14 +4,19 @@ import { View } from '@tarojs/components'
 import './index.scss'
 
 class VantWeapp extends PureComponent {
+  state = {
+    menuDropList: [{ text: '全部商品', value: 0 }, { text: '新款商品', value: 1 }, { text: '活动商品', value: 2 }],
+    menuDropValue: 0
+  }
   config: Config = {
     usingComponents: {
       'van-button': '/components/vant-weapp/dist/button/index',
       'van-search': '/components/vant-weapp/dist/search/index',
-      'van-icon': '/components/vant-weapp/dist/icon/index'
+      'van-icon': '/components/vant-weapp/dist/icon/index',
     }
   }
   render() {
+    /* const { menuDropList, menuDropValue } = this.state */
     return (
       <View className="custom-class demo-block van-clearfix demo-block--padding">
         <View className="demo-block__title">按钮</View>
@@ -36,6 +41,11 @@ class VantWeapp extends PureComponent {
         <van-icon name="close" />
         <van-icon name="star" />
         <van-icon name="star-o" />
+        <View className="row">
+          {/* <van-dropdown-menu>
+            <van-dropdown-item value={menuDropValue} options={menuDropList} />
+          </van-dropdown-menu> */}
+        </View>
       </View>
     )
   }

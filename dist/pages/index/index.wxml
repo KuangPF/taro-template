@@ -1,4 +1,4 @@
-<block>
+<block wx:if="{{$taroCompReady}}">
     <view class="index-wrap">
         <button bindtap="anonymousFunc0" class="mt15">基础组件</button>
         <button bindtap="anonymousFunc1" class="mt15">数据请求</button>

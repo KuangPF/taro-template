@@ -19,9 +19,13 @@ var _class, _temp2; /*
 
 var _index = require("../../npm/@tarojs/taro-weapp/index.js");
 
-var _index2 = require("../../models/data-dva/index.js");
+var _index2 = _interopRequireDefault(_index);
 
-var _index3 = require("../../npm/@tarojs/redux/index.js");
+var _index3 = require("../../models/data-dva/index.js");
+
+var _index4 = require("../../npm/@tarojs/redux/index.js");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -47,19 +51,20 @@ var DataDva = (_temp2 = _class = function (_PureComponent) {
       usingComponents: {
         'van-button': '/components/vant-weapp/dist/button/index'
       }
-    }, _this.$$refs = [], _temp), _possibleConstructorReturn(_this, _ret);
+    }, _this.customComponents = [], _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(DataDva, [{
     key: "_constructor",
     value: function _constructor() {
       _get(DataDva.prototype.__proto__ || Object.getPrototypeOf(DataDva.prototype), "_constructor", this).apply(this, arguments);
+      this.$$refs = new _index2.default.RefsArray();
     }
   }, {
     key: "handleCountOperate",
     value: function handleCountOperate(operateType) {
       this.props.dispatch({
-        type: _index2.namespace + "/opeateDecrease",
+        type: _index3.namespace + "/opeateDecrease",
         payload: {
           operateType: operateType
         }
@@ -69,7 +74,7 @@ var DataDva = (_temp2 = _class = function (_PureComponent) {
     key: "handleSetZero",
     value: function handleSetZero() {
       this.props.dispatch({
-        type: _index2.namespace + "/setState",
+        type: _index3.namespace + "/setState",
         payload: {
           count: 0
         }
@@ -82,18 +87,19 @@ var DataDva = (_temp2 = _class = function (_PureComponent) {
 
       this.__state = arguments[0] || this.state || {};
       this.__props = arguments[1] || this.props || {};
-      var __runloopRef = arguments[2];
+      var __isRunloopRef = arguments[2];
+      var __prefix = this.$prefix;
       ;
 
       var count = this.__props.count;
 
 
       this.anonymousFunc0 = function () {
-        _this2.handleCountOperate(_index2.actionType.Decrease);
+        _this2.handleCountOperate(_index3.actionType.Decrease);
       };
 
       this.anonymousFunc1 = function () {
-        _this2.handleCountOperate(_index2.actionType.Increase);
+        _this2.handleCountOperate(_index3.actionType.Increase);
       };
 
       Object.assign(this.__state, {
@@ -114,21 +120,12 @@ var DataDva = (_temp2 = _class = function (_PureComponent) {
   }]);
 
   return DataDva;
-}(_index.PureComponent), _class.properties = {
-  "dispatch": {
-    "type": null,
-    "value": null
-  },
-  "count": {
-    "type": null,
-    "value": null
-  }
-}, _class.$$events = ["anonymousFunc0", "anonymousFunc1", "handleSetZero"], _temp2);
+}(_index.PureComponent), _class.$$events = ["anonymousFunc0", "anonymousFunc1", "handleSetZero"], _class.$$componentPath = "pages/data-dva/index", _temp2);
 
 var mapStateToProps = function mapStateToProps(models) {
-  return _extends({}, models[_index2.namespace]);
+  return _extends({}, models[_index3.namespace]);
 };
-var DataDva__Connected = (0, _index3.connect)(mapStateToProps)(DataDva);
+var DataDva__Connected = (0, _index4.connect)(mapStateToProps)(DataDva);
 exports.default = DataDva__Connected;
 
 Component(require('../../npm/@tarojs/taro-weapp/index.js').default.createComponent(DataDva__Connected, true));

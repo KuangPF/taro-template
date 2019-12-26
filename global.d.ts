@@ -26,5 +26,7 @@ declare namespace JSX {
     'van-uploader': any
     'van-search': any
     'van-icon': any
+    'van-dropdown-item': any
+    'van-dropdown-menu': any
   }
 }

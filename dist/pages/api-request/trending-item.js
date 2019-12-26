@@ -42,13 +42,14 @@ var TrendingItem = (_temp2 = _class = function (_Taro$PureComponent) {
       _index2.default.navigateTo({
         url: _index3.routers.webview + "?webviewSrc=" + data.url
       });
-    }, _this.$$refs = [], _temp), _possibleConstructorReturn(_this, _ret);
+    }, _this.customComponents = [], _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(TrendingItem, [{
     key: "_constructor",
     value: function _constructor() {
       _get(TrendingItem.prototype.__proto__ || Object.getPrototypeOf(TrendingItem.prototype), "_constructor", this).apply(this, arguments);
+      this.$$refs = new _index2.default.RefsArray();
     }
   }, {
     key: "_createData",
@@ -57,7 +58,8 @@ var TrendingItem = (_temp2 = _class = function (_Taro$PureComponent) {
 
       this.__state = arguments[0] || this.state || {};
       this.__props = arguments[1] || this.props || {};
-      var __runloopRef = arguments[2];
+      var __isRunloopRef = arguments[2];
+      var __prefix = this.$prefix;
       ;
 
       var _props = this.__props,
@@ -88,16 +90,7 @@ var TrendingItem = (_temp2 = _class = function (_Taro$PureComponent) {
   }]);
 
   return TrendingItem;
-}(_index2.default.PureComponent), _class.properties = {
-  "data": {
-    "type": null,
-    "value": null
-  },
-  "index": {
-    "type": null,
-    "value": null
-  }
-}, _class.$$events = ["anonymousFunc0"], _temp2);
+}(_index2.default.PureComponent), _class.$$events = ["anonymousFunc0"], _class.$$componentPath = "pages/api-request/trending-item", _temp2);
 exports.default = TrendingItem;
 
 Component(require('../../npm/@tarojs/taro-weapp/index.js').default.createComponent(TrendingItem));

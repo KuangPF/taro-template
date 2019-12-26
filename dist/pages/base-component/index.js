@@ -66,7 +66,7 @@ var BaseComponent = (_temp2 = _class = function (_PureComponent) {
           console.log(res.errMsg);
         }
       });
-    }, _this.$$refs = [], _temp), _possibleConstructorReturn(_this, _ret);
+    }, _this.customComponents = [], _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(BaseComponent, [{
@@ -81,13 +81,15 @@ var BaseComponent = (_temp2 = _class = function (_PureComponent) {
           nickName: ''
         }
       };
+      this.$$refs = new _index2.default.RefsArray();
     }
   }, {
     key: "_createData",
     value: function _createData() {
       this.__state = arguments[0] || this.state || {};
       this.__props = arguments[1] || this.props || {};
-      var __runloopRef = arguments[2];
+      var __isRunloopRef = arguments[2];
+      var __prefix = this.$prefix;
       ;
 
       var _state = this.__state,
@@ -103,7 +105,7 @@ var BaseComponent = (_temp2 = _class = function (_PureComponent) {
   }]);
 
   return BaseComponent;
-}(_index.PureComponent), _class.properties = {}, _class.$$events = ["handleGetUserInfo", "handleDateChange", "handleShowActionSheet"], _temp2);
+}(_index.PureComponent), _class.$$events = ["handleGetUserInfo", "handleDateChange", "handleShowActionSheet"], _class.$$componentPath = "pages/base-component/index", _temp2);
 exports.default = BaseComponent;
 
 Component(require('../../npm/@tarojs/taro-weapp/index.js').default.createComponent(BaseComponent, true));

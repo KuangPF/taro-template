@@ -1,4 +1,4 @@
-<block>
+<block wx:if="{{$taroCompReady}}">
     <view class="page-content">
         <button class="mt15" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="handleGetUserInfo">获取用户信息</button>
         <button type="primary" class="mt15" loading="{{true}}">Loading...</button>

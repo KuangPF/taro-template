@@ -35,6 +35,15 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 (0, _index3.setStore)(_index5.default);
 
+if (_index3.ReduxContext.Provider) {
+  _index3.ReduxContext.Provider({
+    store: _index5.default
+  });
+  _index3.ReduxContext.Provider({
+    store: _index5.default
+  });
+}
+
 var _App = function (_BaseComponent) {
   _inherits(_App, _BaseComponent);
 

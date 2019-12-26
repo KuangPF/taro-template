@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -10,7 +10,11 @@ var _get = function get(object, property, receiver) { if (object === null) objec
 
 var _class, _temp2;
 
-var _index = require('../../npm/@tarojs/taro-weapp/index.js');
+var _index = require("../../npm/@tarojs/taro-weapp/index.js");
+
+var _index2 = _interopRequireDefault(_index);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -32,26 +36,32 @@ var VantWeapp = (_temp2 = _class = function (_PureComponent) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = VantWeapp.__proto__ || Object.getPrototypeOf(VantWeapp)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = [], _this.config = {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = VantWeapp.__proto__ || Object.getPrototypeOf(VantWeapp)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["menuDropList", "menuDropValue"], _this.config = {
       usingComponents: {
         'van-button': '/components/vant-weapp/dist/button/index',
         'van-search': '/components/vant-weapp/dist/search/index',
         'van-icon': '/components/vant-weapp/dist/icon/index'
       }
-    }, _this.$$refs = [], _temp), _possibleConstructorReturn(_this, _ret);
+    }, _this.customComponents = [], _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(VantWeapp, [{
-    key: '_constructor',
+    key: "_constructor",
     value: function _constructor() {
-      _get(VantWeapp.prototype.__proto__ || Object.getPrototypeOf(VantWeapp.prototype), '_constructor', this).apply(this, arguments);
+      _get(VantWeapp.prototype.__proto__ || Object.getPrototypeOf(VantWeapp.prototype), "_constructor", this).apply(this, arguments);
+      this.state = {
+        menuDropList: [{ text: '全部商品', value: 0 }, { text: '新款商品', value: 1 }, { text: '活动商品', value: 2 }],
+        menuDropValue: 0
+      };
+      this.$$refs = new _index2.default.RefsArray();
     }
   }, {
-    key: '_createData',
+    key: "_createData",
     value: function _createData() {
       this.__state = arguments[0] || this.state || {};
       this.__props = arguments[1] || this.props || {};
-      var __runloopRef = arguments[2];
+      var __isRunloopRef = arguments[2];
+      var __prefix = this.$prefix;
       ;
       Object.assign(this.__state, {});
       return this.__state;
@@ -59,7 +69,7 @@ var VantWeapp = (_temp2 = _class = function (_PureComponent) {
   }]);
 
   return VantWeapp;
-}(_index.PureComponent), _class.properties = {}, _class.$$events = [], _temp2);
+}(_index.PureComponent), _class.$$events = [], _class.$$componentPath = "pages/vant-weapp/index", _temp2);
 exports.default = VantWeapp;
 
 Component(require('../../npm/@tarojs/taro-weapp/index.js').default.createComponent(VantWeapp, true));

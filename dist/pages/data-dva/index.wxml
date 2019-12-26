@@ -1,10 +1,10 @@
-<block>
+<block wx:if="{{$taroCompReady}}">
     <view class="page-content">
         <view class="count blod">Count: {{count}}</view>
         <view class="operate">
-            <van-button size="small" __triggerObserer="{{ _triggerObserer }}" bindclick="anonymousFunc0" __fn_onClick="{{true}}">减少</van-button>
-            <van-button size="small" __triggerObserer="{{ _triggerObserer }}" class="ml15" bindclick="anonymousFunc1" __fn_onClick="{{true}}">增加</van-button>
-            <van-button size="small" __triggerObserer="{{ _triggerObserer }}" class="ml15" type="primary" bindclick="handleSetZero" __fn_onClick="{{true}}">置为0</van-button>
+            <van-button size="small" bindclick="anonymousFunc0" __fn_onClick="{{true}}">减少</van-button>
+            <van-button size="small" class="ml15" bindclick="anonymousFunc1" __fn_onClick="{{true}}">增加</van-button>
+            <van-button size="small" class="ml15" type="primary" bindclick="handleSetZero" __fn_onClick="{{true}}">置为0</van-button>
         </view>
     </view>
 </block>
