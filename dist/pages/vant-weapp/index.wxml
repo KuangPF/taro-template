@@ -16,6 +16,10 @@
         <van-icon name="close"></van-icon>
         <van-icon name="star"></van-icon>
         <van-icon name="star-o"></van-icon>
-        <view class="row"></view>
+        <view class="row">
+            <van-dropdown-menu>
+                <van-dropdown-item value="{{menuDropValue}}" options="{{menuDropList}}"></van-dropdown-item>
+            </van-dropdown-menu>
+        </view>
     </view>
 </block>

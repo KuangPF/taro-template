@@ -36,11 +36,13 @@ var VantWeapp = (_temp2 = _class = function (_PureComponent) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = VantWeapp.__proto__ || Object.getPrototypeOf(VantWeapp)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["menuDropList", "menuDropValue"], _this.config = {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = VantWeapp.__proto__ || Object.getPrototypeOf(VantWeapp)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["menuDropValue", "menuDropList"], _this.config = {
       usingComponents: {
         'van-button': '/components/vant-weapp/dist/button/index',
         'van-search': '/components/vant-weapp/dist/search/index',
-        'van-icon': '/components/vant-weapp/dist/icon/index'
+        'van-icon': '/components/vant-weapp/dist/icon/index',
+        'van-dropdown-menu': '/components/vant-weapp/dist/dropdown-menu/index',
+        'van-dropdown-item': '/components/vant-weapp/dist/dropdown-item/index'
       }
     }, _this.customComponents = [], _temp), _possibleConstructorReturn(_this, _ret);
   }
@@ -50,8 +52,8 @@ var VantWeapp = (_temp2 = _class = function (_PureComponent) {
     value: function _constructor() {
       _get(VantWeapp.prototype.__proto__ || Object.getPrototypeOf(VantWeapp.prototype), "_constructor", this).apply(this, arguments);
       this.state = {
-        menuDropList: [{ text: '全部商品', value: 0 }, { text: '新款商品', value: 1 }, { text: '活动商品', value: 2 }],
-        menuDropValue: 0
+        menuDropList: [{ text: '全部商品', value: 1 }, { text: '新款商品', value: 2 }, { text: '活动商品', value: 3 }],
+        menuDropValue: 2
       };
       this.$$refs = new _index2.default.RefsArray();
     }
@@ -63,6 +65,11 @@ var VantWeapp = (_temp2 = _class = function (_PureComponent) {
       var __isRunloopRef = arguments[2];
       var __prefix = this.$prefix;
       ;
+
+      var _state = this.__state,
+          menuDropList = _state.menuDropList,
+          menuDropValue = _state.menuDropValue;
+
       Object.assign(this.__state, {});
       return this.__state;
     }

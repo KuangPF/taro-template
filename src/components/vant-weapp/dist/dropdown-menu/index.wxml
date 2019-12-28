@@ -1,5 +1,5 @@
 <wxs src="../wxs/utils.wxs" module="utils" />
-<wxs src="./index.wxs" module="computed" />
+<wxs src="../wxs/dropdown-menu/index.wxs" module="computed" />
 
 <view class="van-dropdown-menu van-dropdown-menu--top-bottom">
   <view
